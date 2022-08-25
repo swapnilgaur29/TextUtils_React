@@ -6,6 +6,12 @@ import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom"
+
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
@@ -39,14 +45,19 @@ function App() {
 
   return (
     <>
-    <Navbar title="TextUtils" search="Def_Search" mode={mode} toggleMode={toggleMode}/>
-    {/* If No props are been provided default will get Executed! */}
+    {/* <Router> */}
+      <Navbar title="TextUtils" search="Def_Search" mode={mode} toggleMode={toggleMode}/>
+      {/* If No props are been provided default will get Executed! */}
 
-    <Alert alert={alert}/>
-    <div className="container my-3" >
-        <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
-    </div>
-    {/* <About/> */}
+      <Alert alert={alert}/>
+      <div className="container my-3" >
+        {/* <Routes>
+            <Route exact path="/about" element={<About/>}/> */}
+            {/* <Route exact path="/" element={} /> */}
+            <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>
+        {/* </Routes> */}
+      </div>
+    {/* </Router> */}
    </>
   );
 }
